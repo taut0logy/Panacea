@@ -18,3 +18,4 @@ local.properties
 *.hprof
 output.json
 *.log
+/.idea/
