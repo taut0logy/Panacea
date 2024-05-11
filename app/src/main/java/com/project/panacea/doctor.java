@@ -1,0 +1,64 @@
+package com.project.panacea;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+public class doctor {
+    private String name;
+    private String gender;
+    private String phoneNumber;
+    private String email;
+    private int yearsOfExperience;
+
+    private String department;
+    private String consultationHours;
+
+    private ArrayList<String> expertise = new ArrayList<String>();
+
+
+
+    public doctor(String name, String gender, String phoneNumber, String email, int yearsOfExperience, String department, String consultationHours, ArrayList<String> expertise) {
+        this.name = name;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.yearsOfExperience = yearsOfExperience;
+        this.department = department;
+        this.consultationHours = consultationHours;
+        this.expertise = expertise;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getYearsOfExperience() {
+        return yearsOfExperience;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public String getConsultationHours() {
+        return consultationHours;
+    }
+
+    public ArrayList<String> getExpertise() {
+        return expertise;
+    }
+
+
+}
