@@ -13,11 +13,13 @@ public class doctor {
     private String department;
     private String consultationHours;
 
+    private boolean isAvailable;
+
     private ArrayList<String> expertise = new ArrayList<String>();
 
 
 
-    public doctor(String name, String gender, String phoneNumber, String email, int yearsOfExperience, String department, String consultationHours, ArrayList<String> expertise) {
+    public doctor(String name, String gender, String phoneNumber, String email, int yearsOfExperience, String department, String consultationHours, boolean isAvailable, ArrayList<String> expertise) {
         this.name = name;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
@@ -25,6 +27,7 @@ public class doctor {
         this.yearsOfExperience = yearsOfExperience;
         this.department = department;
         this.consultationHours = consultationHours;
+        this.isAvailable = isAvailable;
         this.expertise = expertise;
     }
 
@@ -54,6 +57,10 @@ public class doctor {
 
     public String getConsultationHours() {
         return consultationHours;
+    }
+
+    public boolean getIsAvailable() {
+        return isAvailable;
     }
 
     public ArrayList<String> getExpertise() {
