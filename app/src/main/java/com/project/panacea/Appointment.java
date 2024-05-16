@@ -1,6 +1,6 @@
 package com.project.panacea;
 
-public class appointment {
+public class Appointment {
     private String patientName;
     private String doctorName;
 
@@ -8,7 +8,7 @@ public class appointment {
     private String time;
     private int status;
 
-    public appointment(String patientName, String doctorName, String date, String time, int status) {
+    public Appointment(String patientName, String doctorName, String date, String time, int status) {
         this.patientName = patientName;
         this.doctorName = doctorName;
         this.date = date;
