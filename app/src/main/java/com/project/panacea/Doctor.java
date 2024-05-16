@@ -1,9 +1,8 @@
 package com.project.panacea;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class doctor {
+public class Doctor {
     private String name;
     private String gender;
     private String phoneNumber;
@@ -19,7 +18,7 @@ public class doctor {
 
 
 
-    public doctor(String name, String gender, String phoneNumber, String email, int yearsOfExperience, String department, String consultationHours, boolean isAvailable, ArrayList<String> expertise) {
+    public Doctor(String name, String gender, String phoneNumber, String email, int yearsOfExperience, String department, String consultationHours, boolean isAvailable, ArrayList<String> expertise) {
         this.name = name;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
