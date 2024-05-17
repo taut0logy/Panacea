@@ -235,7 +235,7 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         });
                         Toast.makeText(RegisterActivity.this, "User created successfully.", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                        Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
                         startActivity(intent);
                     }
 
@@ -263,7 +263,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     boolean validatePhoneNumber(String phoneNumber) {
-        return phoneNumber.matches("^\\d{10}$");
+        return phoneNumber.matches("^\\d{11}$");
     }
 
     boolean validateDateOfBirth(String dateOfBirth) {
