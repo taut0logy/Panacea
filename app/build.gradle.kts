@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.volley)
     implementation(libs.glide)
     implementation(libs.okhttp)
+    implementation(libs.circleimageview)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     implementation(libs.androidx.espresso.intents)

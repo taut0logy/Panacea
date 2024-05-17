@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="roundedImageView" parent="">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:radius">100dp</item>
+        <item name="borderWidth" tools:ignore="NewApi">10dp</item>
+        <item name="android:clipToOutline">true</item>
+    </style>
+</resources>
