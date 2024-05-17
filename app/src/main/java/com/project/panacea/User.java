@@ -14,10 +14,11 @@ public class User {
 
     public User() {}
 
-    public User(String name, Date dateOfBirth, String email, String phoneNumber) {
+    public User(String name, Date dateOfBirth, String email, String phoneNumber, Gender gender) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.gender=gender;
     }
 }
