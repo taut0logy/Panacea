@@ -40,6 +40,10 @@ public class AuthUtility {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
+                        if (mAuth.getCurrentUser() == null) {
+                            listener.onError("User not found");
+                            return;
+                        }
                         String uid = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                         listener.onSuccess(uid);
                     } else {
