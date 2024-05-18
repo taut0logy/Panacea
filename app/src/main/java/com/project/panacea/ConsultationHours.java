@@ -2,9 +2,10 @@ package com.project.panacea;
 
 import android.util.Pair;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class ConsultationHours {
+public class ConsultationHours implements Serializable {
 
     private final HashMap<Weekday, Pair<Double, Double>> consultationHours;
 

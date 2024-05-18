@@ -2,10 +2,13 @@ package com.project.panacea;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -43,7 +46,9 @@ public class UserUtility {
 
     public void createUser(User user, OnUserCreatedListener listener) {
         String uid = authUtility.getAuth().getCurrentUser().getUid();
-        database.getReference("users").child(uid).setValue(user).addOnCompleteListener(task -> {
+        //JSONObject userJson = user.toJSON();
+        //Log.e(TAG, "createUser: " + userJson.toString());
+        database.getReference().child("users").child(uid).setValue(user).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 listener.onSuccess(uid);
             } else {
@@ -58,8 +63,9 @@ public class UserUtility {
     }
 
     public void getUser(String uid, OnUserRetrievedListener listener) {
-        database.getReference("users").child(uid).get().addOnCompleteListener(task -> {
+        database.getReference().child("users").child(uid).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
+                //JSONObject userJson = task.getResult().getValue(JSONObject.class);
                 User user = task.getResult().getValue(User.class);
                 listener.onSuccess(user);
             } else {

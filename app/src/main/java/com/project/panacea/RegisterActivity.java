@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -42,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
     private RadioGroup rgGender;
     private ImageView avatarImageView;
     private Button btnRegister;
+    private TextView tvLogin;
     private String currentPhotoPath;
 
     private int avatarUploaded = 0;
@@ -71,12 +74,18 @@ public class RegisterActivity extends AppCompatActivity {
         rgGender = findViewById(R.id.regRgGender);
         avatarImageView = findViewById(R.id.regAvatar);
         btnRegister = findViewById(R.id.regBtnRegister);
+        tvLogin = findViewById(R.id.regTvLogin);
 
         etDateOfBirth.setOnClickListener(this::showDatePickerDialog);
 
         avatarImageView.setOnClickListener(this::showPopup);
 
         btnRegister.setOnClickListener(this::onRegisterClick);
+
+        tvLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
 
     }
 
@@ -139,18 +148,15 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void setPic() {
-        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-        bmOptions.inJustDecodeBounds = true;
-        BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
-        int photoW = bmOptions.outWidth;
-        int photoH = bmOptions.outHeight;
-        int scaleFactor = Math.min(photoW / 100, photoH / 100);
-        bmOptions.inJustDecodeBounds = false;
-        bmOptions.inSampleSize = scaleFactor;
-        bmOptions.inPurgeable = true;
-        Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
-        avatarImageView.setImageBitmap(bitmap);
-        avatarUploaded = 1;
+        File imgFile = new File(currentPhotoPath);
+        if (imgFile.exists()) {
+            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+            Matrix matrix = new Matrix();
+            matrix.postRotate(90);
+            Bitmap rotatedBitmap = Bitmap.createBitmap(myBitmap, 0, 0, myBitmap.getWidth(), myBitmap.getHeight(), matrix, true);
+            avatarImageView.setImageBitmap(rotatedBitmap);
+            avatarUploaded = 1;
+        }
     }
 
     private File createImageFile() throws IOException {
@@ -172,7 +178,7 @@ public class RegisterActivity extends AppCompatActivity {
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, (view, year1, month1, dayOfMonth) -> {
-            etDateOfBirth.setText(dayOfMonth + "/" + (month1 + 1) + "/" + year1);
+            etDateOfBirth.setText((dayOfMonth<10?("0"+dayOfMonth):dayOfMonth) + "/" + ((month1 + 1<10)?"0"+(month1 + 1):(month1 + 1)) + "/" + year1);
         }, year, month, day);
         datePickerDialog.show();
     }
@@ -187,10 +193,13 @@ public class RegisterActivity extends AppCompatActivity {
         String phoneNumber = etPhoneNumber.getText().toString();
         Date dateOfBirth = null;
         try {
-            dateOfBirth = DateFormat.getDateInstance().parse(etDateOfBirth.getText().toString());
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            dateFormat.setLenient(true);
+            dateOfBirth = dateFormat.parse(etDateOfBirth.getText().toString());
         } catch (ParseException e) {
             Log.e(TAG, "Error parsing date", e);
         }
+        Log.d(TAG, "Date of birth: " + dateOfBirth);
         int genderId = rgGender.getCheckedRadioButtonId();
         if (avatarUploaded == 0) {
             if (genderId == R.id.regRbMale) {
@@ -220,6 +229,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onSuccess(String uid) {
                 User user = new User(name, finalDateOfBirth, email, phoneNumber, finalGender);
+                Log.e(TAG + " User", user.toJSON().toString());
                 userUtility.createUser(user, new UserUtility.OnUserCreatedListener() {
                     @Override
                     public void onSuccess(String uid) {
@@ -232,16 +242,19 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(RegisterActivity.this, "Error uploading avatar: " + message, Toast.LENGTH_SHORT).show();
+                                Log.e(TAG, message);
                             }
                         });
                         Toast.makeText(RegisterActivity.this, "User created successfully.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
                         startActivity(intent);
+                        finish();
                     }
 
                     @Override
                     public void onError(String message) {
                         Toast.makeText(RegisterActivity.this, "Error creating user: " + message, Toast.LENGTH_SHORT).show();
+                        Log.e(TAG, message);
                     }
                 });
             }
@@ -249,6 +262,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onError(String error) {
                 Toast.makeText(RegisterActivity.this, "Error creating user: " + error, Toast.LENGTH_SHORT).show();
+                Log.e(TAG, error);
             }
         });
     }
@@ -326,10 +340,10 @@ public class RegisterActivity extends AppCompatActivity {
             etDateOfBirth.setError("Date of birth is required.");
             return false;
         }
-        if (!validateDateOfBirth(dateOfBirth)) {
-            etDateOfBirth.setError("Invalid date of birth.");
-            return false;
-        }
+//        if (!validateDateOfBirth(dateOfBirth)) {
+//            etDateOfBirth.setError("Invalid date of birth.");
+//            return false;
+//        }
         return true;
     }
 
