@@ -76,7 +76,7 @@ public class UserUtilityTest {
 
         when(mockAuth.getCurrentUser()).thenReturn(mockFirebaseUser);
         when(mockFirebaseUser.getUid()).thenReturn("uid123");
-        when(mockDatabase.getReference(anyString())).thenReturn(mockDatabaseReference);
+        when(mockDatabase.getReference()).thenReturn(mockDatabaseReference);
         when(mockStorage.getReference()).thenReturn(mockStorageReference);
         when(mockStorageReference.child(anyString())).thenReturn(mockStorageReference);
         when(mockStorageReference.getBytes(anyLong())).thenReturn(mockBytesTask);

@@ -80,7 +80,7 @@ public class UserUtility {
     }
 
     public void updateUser(String uid, User user, OnUserUpdatedListener listener) {
-        database.getReference("users").child(uid).setValue(user).addOnCompleteListener(task -> {
+        database.getReference().child("users").child(uid).setValue(user).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 listener.onSuccess();
             } else {
@@ -95,7 +95,7 @@ public class UserUtility {
     }
 
     public void deleteUser(String uid, OnUserDeletedListener listener) {
-        database.getReference("users").child(uid).removeValue().addOnCompleteListener(task -> {
+        database.getReference().child("users").child(uid).removeValue().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 listener.onSuccess();
             } else {
