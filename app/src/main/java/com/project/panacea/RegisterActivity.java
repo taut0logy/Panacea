@@ -152,7 +152,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (imgFile.exists()) {
             Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
             Matrix matrix = new Matrix();
-            matrix.postRotate(90);
+            matrix.postRotate(270);
             Bitmap rotatedBitmap = Bitmap.createBitmap(myBitmap, 0, 0, myBitmap.getWidth(), myBitmap.getHeight(), matrix, true);
             avatarImageView.setImageBitmap(rotatedBitmap);
             avatarUploaded = 1;
