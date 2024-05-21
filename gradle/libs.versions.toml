@@ -43,6 +43,7 @@ androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", versi
 androidx-espresso-contrib = { module = "androidx.test.espresso:espresso-contrib", version.ref = "espressoCore" }
 androidx-espresso-core-v340 = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCoreVersion" }
 androidx-espresso-intents-v340 = { module = "androidx.test.espresso:espresso-intents", version.ref = "espressoIntentsVersion" }
+androidx-espresso-remote = { module = "androidx.test.espresso:espresso-remote", version.ref = "espressoCoreVersion" }
 androidx-junit-v113 = { module = "androidx.test.ext:junit", version.ref = "androidxJunit" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }

@@ -80,8 +80,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.espresso.contrib)
-    androidTestImplementation("androidx.test.espresso:espresso-remote:3.5.1")
+    androidTestImplementation(libs.androidx.espresso.remote)
     androidTestImplementation(libs.androidx.core)
-    implementation("com.android.volley:volley:1.2.1")
+    implementation(libs.volley)
     androidTestImplementation(libs.androidx.espresso.intents)
 }
