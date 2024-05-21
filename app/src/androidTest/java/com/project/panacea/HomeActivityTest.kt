@@ -4,6 +4,7 @@ import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.remote.EspressoRemoteMessage
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import junit.framework.TestCase.assertNotNull
@@ -17,8 +18,6 @@ public class HomeActivityTest {
     @get: Rule
     var activityScenarioRule = ActivityScenarioRule(HomeActivity::class.java)
 
-
-
     @Test
     fun testLaunchRecords() {
             Espresso.onView(ViewMatchers.withId(R.id.records)).perform(ViewActions.click())
@@ -28,7 +27,7 @@ public class HomeActivityTest {
 
     @Test
     fun testLaunchHealthTips() {
-        Espresso.onView(ViewMatchers.withId(R.id.healthtips)).perform(ViewActions.click())
+        Espresso.onView(ViewMatchers.withId(R.id.healthtip)).perform(ViewActions.click())
         assertNotNull(ActivityScenario.launch(HealthTipsActivity::class.java))
     }
 
