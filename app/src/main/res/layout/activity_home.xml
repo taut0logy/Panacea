@@ -5,24 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
-    android:background="@drawable/homebackground">
+    >
 
-    <TextView
-        android:id="@+id/homeText"
-        android:layout_width="wrap_content"
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome Home"
-        android:textSize="30sp"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp" />
+        android:id="@+id/toolbar"
+        android:backgroundTint="@color/lime"
+        android:padding="15dp"
+        />
+
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/homeText">
+        android:layout_below="@id/toolbar"
+        >
 
         <GridLayout
             android:layout_width="match_parent"

@@ -26,26 +26,28 @@ public class HealthTipsActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_health_tips);
 
-        bottomNavigation = findViewById(R.id.bottom_navigation);
 
-        //By default selecting a fragment
-        getSupportFragmentManager().beginTransaction().replace(R.id.children, new ChildrenFragment()).commit();
-        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id = menuItem.getItemId();
-                if (id == R.id.children) {
-                    Toast.makeText(HealthTipsActivity.this, "Children", Toast.LENGTH_SHORT).show();
-                } else if (id == R.id.pregnant_women) {
-                    Toast.makeText(HealthTipsActivity.this, "Pregnant", Toast.LENGTH_SHORT).show();
-                } else if (id == R.id.mental_health) {
-                    Toast.makeText(HealthTipsActivity.this, "Mental", Toast.LENGTH_SHORT).show();
-                } else if (id == R.id.hypertension) {
-                    Toast.makeText(HealthTipsActivity.this, "Hypertension", Toast.LENGTH_SHORT).show();
-                }
-                return true;
-            }
-        });
+
+//        bottomNavigation = findViewById(R.id.bottom_navigation);
+//
+//        //By default selecting a fragment
+//        getSupportFragmentManager().beginTransaction().replace(R.id.children, new ChildrenFragment()).commit();
+//        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//                int id = menuItem.getItemId();
+//                if (id == R.id.children) {
+//                    Toast.makeText(HealthTipsActivity.this, "Children", Toast.LENGTH_SHORT).show();
+//                } else if (id == R.id.pregnant_women) {
+//                    Toast.makeText(HealthTipsActivity.this, "Pregnant", Toast.LENGTH_SHORT).show();
+//                } else if (id == R.id.mental_health) {
+//                    Toast.makeText(HealthTipsActivity.this, "Mental", Toast.LENGTH_SHORT).show();
+//                } else if (id == R.id.hypertension) {
+//                    Toast.makeText(HealthTipsActivity.this, "Hypertension", Toast.LENGTH_SHORT).show();
+//                }
+//                return true;
+//            }
+//        });
 
 
     }
