@@ -59,14 +59,19 @@ dependencies {
     implementation(libs.circleimageview)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
-    implementation(libs.androidx.espresso.intents)
+
+    // Add these if not already present
     testImplementation(libs.junit)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.mockito.mockito.core)
     testImplementation(libs.mockito.inline)
-    testImplementation (libs.robolectric.robolectric)
+    testImplementation(libs.robolectric.robolectric)
+
+    androidTestImplementation(libs.robolectric.robolectric)
+    androidTestImplementation(libs.mockito.core.v3112)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.espresso.contrib)
-
+    androidTestImplementation(libs.androidx.core)
+    androidTestImplementation(libs.androidx.espresso.intents)
 }
