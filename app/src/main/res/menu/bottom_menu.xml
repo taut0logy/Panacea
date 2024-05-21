@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/children"
+        android:icon="@drawable/icon"
+        android:title="Children"
+        />
+
+    <item
+        android:id="@+id/pregnant_women"
+        android:icon="@drawable/icon"
+        android:title="Pregnant Women"
+        />
+
+    <item
+        android:id="@+id/hypertension"
+        android:icon="@drawable/icon"
+        android:title="Hypertension"
+        />
+
+    <item
+        android:id="@+id/mental_health"
+        android:icon="@drawable/icon"
+        android:title="Mental Health"
+        />
+
+
+</menu>
