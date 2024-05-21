@@ -45,7 +45,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation(libs.androidx.core.splashscreen)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
@@ -80,8 +80,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.espresso.contrib)
-    androidTestImplementation("androidx.test.espresso:espresso-remote:3.5.1")
+    androidTestImplementation(libs.androidx.espresso.remote)
     androidTestImplementation(libs.androidx.core)
-    implementation("com.android.volley:volley:1.2.1")
+    implementation(libs.volley)
     androidTestImplementation(libs.androidx.espresso.intents)
 }
