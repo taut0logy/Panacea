@@ -22,21 +22,15 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         val recordsCardView = findViewById<CardView>(R.id.records)
+        val healthTipsCardView = findViewById<CardView>(R.id.healthtip)
 
-        UserUtility.getInstance().getUser(FirebaseAuth.getInstance().currentUser!!.uid,    object : OnUserRetrievedListener{
-
-            override fun onSuccess(user: com.project.panacea.User?) {
-                if (user != null) {
-                    Log.d("UserClass", user.toJSON().toString())
-                };
-            }
-
-            override fun onError(message: String?) {
-                Toast.makeText(this@HomeActivity, message, Toast.LENGTH_SHORT).show()
-            }
-        })
         recordsCardView.setOnClickListener {
             val intent = Intent(this, RecordActivity::class.java)
+            startActivity(intent);
+        }
+
+        healthTipsCardView.setOnClickListener {
+            val intent = Intent(this, HealthTipsActivity::class.java)
             startActivity(intent);
         }
     }

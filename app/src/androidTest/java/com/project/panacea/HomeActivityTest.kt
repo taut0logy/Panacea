@@ -17,9 +17,19 @@ public class HomeActivityTest {
     @get: Rule
     var activityScenarioRule = ActivityScenarioRule(HomeActivity::class.java)
 
+
+
     @Test
     fun testLaunchRecords() {
             Espresso.onView(ViewMatchers.withId(R.id.records)).perform(ViewActions.click())
             assertNotNull(ActivityScenario.launch(RecordActivity::class.java))
     }
+
+
+    @Test
+    fun testLaunchHealthTips() {
+        Espresso.onView(ViewMatchers.withId(R.id.healthtips)).perform(ViewActions.click())
+        assertNotNull(ActivityScenario.launch(HealthTipsActivity::class.java))
+    }
+
 }
