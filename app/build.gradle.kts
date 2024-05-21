@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.project.panacea"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -37,6 +37,9 @@ android {
     buildFeatures {
         viewBinding = true
     }
+//    packagingOptions {
+//        exclude ("mockito-extensions/org.mockito.plugins.MockMaker")
+//    }
 }
 
 dependencies {
@@ -51,7 +54,7 @@ dependencies {
     implementation(libs.firebase.storage)
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.messaging)
-    implementation(libs.firebase.inappmessaging.display)
+    //implementation(libs.firebase.inappmessaging.display)
     implementation(libs.lottie)
     implementation(libs.volley)
     implementation(libs.glide)
@@ -64,11 +67,16 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.mockito.mockito.core)
+    //testImplementation(libs.mockito.android)
     testImplementation(libs.mockito.inline)
     testImplementation(libs.robolectric.robolectric)
 
-    androidTestImplementation(libs.robolectric.robolectric)
-    androidTestImplementation(libs.mockito.core.v3112)
+//    androidTestImplementation(libs.robolectric.robolectric)
+//    androidTestImplementation(libs.mockito.core.v3112)
+    androidTestImplementation(libs.mockito.android)
+//    androidTestImplementation(libs.powermock.module.junit4)
+//    androidTestImplementation(libs.powermock.api.mockito2)
+//    androidTestImplementation(libs.mockito.inline)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.espresso.contrib)
