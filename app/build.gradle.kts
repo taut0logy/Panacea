@@ -65,11 +65,12 @@ dependencies {
 
     // Add these if not already present
     testImplementation(libs.junit)
+    testImplementation(libs.robolectric.robolectric)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.mockito.mockito.core)
     //testImplementation(libs.mockito.android)
     testImplementation(libs.mockito.inline)
-    testImplementation(libs.robolectric.robolectric)
+
 
 //    androidTestImplementation(libs.robolectric.robolectric)
 //    androidTestImplementation(libs.mockito.core.v3112)
