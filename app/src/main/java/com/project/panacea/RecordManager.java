@@ -32,7 +32,8 @@ public class RecordManager {
             @Override
             public void onSuccess(String uid) {
                 DatabaseReference recordRef = databaseReference.child("records").child(uid);
-                String key = recordRef.push().getKey();
+                long currentTime = System.currentTimeMillis();
+                String key = currentTime + "";
                 Record record = new Record(heartRate, systolicPressure, diastolicPressure, comment);
                 recordRef.child(key).setValue(record);
             }
@@ -42,6 +43,5 @@ public class RecordManager {
                 Log.e(TAG, "onError: " + error);
             }
         });
-
     }
 }

@@ -21,15 +21,21 @@ class HomeActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         val recordsCardView = findViewById<CardView>(R.id.records)
         val healthTipsCardView = findViewById<CardView>(R.id.healthtip)
+        val BMIBMRtCardView = findViewById<CardView>(R.id.bmi)
 
         recordsCardView.setOnClickListener {
             val intent = Intent(this, RecordActivity::class.java)
-            startActivity(intent);
+            startActivity(intent)
         }
 
         healthTipsCardView.setOnClickListener {
             val intent = Intent(this, HealthTipsActivity::class.java)
-            startActivity(intent);
+            startActivity(intent)
+        }
+
+        BMIBMRtCardView.setOnClickListener {
+            val intent = Intent(this, BMIActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -39,7 +45,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
+        return when (item.itemId) {
             R.id.view_profile -> {
                 val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
@@ -52,17 +58,11 @@ class HomeActivity : AppCompatActivity() {
                 true
             }
 
-            R.id.learn_about_health -> {
-                val intent = Intent(this, ContactActivity::class.java)
-                startActivity(intent)
-                true
-            }
-
             R.id.logout -> {
                 signOutUser()
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
-                return true
+                true
             }
             else -> super.onOptionsItemSelected(item)
             }

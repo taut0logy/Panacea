@@ -45,7 +45,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation(libs.androidx.core.splashscreen)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
@@ -55,14 +55,6 @@ dependencies {
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.messaging)
     //implementation(libs.firebase.inappmessaging.display)
-
-        androidTestImplementation (libs.androidx.junit.v113)
-        androidTestImplementation (libs.androidx.espresso.core.v340)
-        androidTestImplementation (libs.androidx.espresso.contrib)
-        androidTestImplementation (libs.androidx.espresso.intents.v340)
-    androidTestImplementation (libs.androidx.core.ktx)
-
-
     implementation(libs.lottie)
     implementation(libs.volley)
     implementation(libs.glide)
@@ -85,44 +77,11 @@ dependencies {
 //    androidTestImplementation(libs.powermock.module.junit4)
 //    androidTestImplementation(libs.powermock.api.mockito2)
 //    androidTestImplementation(libs.mockito.inline)
-    androidTestImplementation (libs.androidx.junit.v113)
-    androidTestImplementation (libs.androidx.espresso.core.v340)
-    androidTestImplementation (libs.androidx.espresso.intents.v340)
-    androidTestImplementation (libs.androidx.espresso.contrib)
-    androidTestImplementation (libs.androidx.rules)
-    testImplementation (libs.robolectric.robolectric)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.espresso.contrib)
     androidTestImplementation(libs.androidx.espresso.remote)
     androidTestImplementation(libs.androidx.core)
-
-
-    testImplementation(libs.junit)
-//    testImplementation(libs.json)
     implementation(libs.volley)
     androidTestImplementation(libs.androidx.espresso.intents)
-//new mara
-
-    testImplementation(libs.mockito.core.v3112)
-    testImplementation(libs.mockito.inline)
-
-
-
-
-    androidTestImplementation(libs.androidx.junit.v113)
-    androidTestImplementation(libs.androidx.espresso.core.v340)
-    androidTestImplementation(libs.androidx.espresso.contrib)
-    androidTestImplementation(libs.androidx.espresso.remote)
-    androidTestImplementation(libs.androidx.espresso.intents.v340)
-    androidTestImplementation(libs.androidx.core)
-
-    testImplementation(libs.mockito.core.v3112)
-    androidTestImplementation(libs.mockito.android)
-
-
-
-    testImplementation (libs.mockito.inline)
-    androidTestImplementation (libs.mockito.android)
-
 }
