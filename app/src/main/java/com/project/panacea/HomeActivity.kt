@@ -14,11 +14,11 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_home)
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        var toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-
         val recordsCardView = findViewById<CardView>(R.id.records)
         val healthTipsCardView = findViewById<CardView>(R.id.healthtip)
         val BMIBMRtCardView = findViewById<CardView>(R.id.bmi)
@@ -51,11 +51,13 @@ class HomeActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+
             R.id.edit_profile -> {
                 val intent = Intent(this, EditProfileActivity::class.java)
                 startActivity(intent)
                 true
             }
+
             R.id.logout -> {
                 signOutUser()
                 val intent = Intent(this, LoginActivity::class.java)
@@ -63,19 +65,27 @@ class HomeActivity : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
-        }
+            }
+
+
+
+
+
+        return super.onOptionsItemSelected(item)
     }
 
     private fun signOutUser() {
         AuthUtility.getInstance().signOut(object : OnUserSignedOutListener {
             override fun onSuccess() {
-                Toast.makeText(this@HomeActivity, "Signed out successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeActivity, "Signed out successfully", Toast.LENGTH_SHORT)
+                    .show()
                 startActivity(Intent(this@HomeActivity, LoginActivity::class.java))
                 finish()
             }
 
             override fun onError(error: String) {
-                Toast.makeText(this@HomeActivity, "Error signing out: $error", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeActivity, "Error signing out: $error", Toast.LENGTH_SHORT)
+                    .show()
             }
         })
     }

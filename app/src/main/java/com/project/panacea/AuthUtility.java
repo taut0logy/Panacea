@@ -6,6 +6,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Objects;
 
 public class AuthUtility {
+
+
     private static final String TAG = "AuthUtility";
     private static AuthUtility instance;
     private final FirebaseAuth mAuth;
@@ -26,6 +28,10 @@ public class AuthUtility {
             instance = new AuthUtility();
         }
         return instance;
+    }
+
+    public static synchronized void setInstance(AuthUtility mockInstance) {
+        instance = mockInstance;
     }
 
     public FirebaseAuth getAuth() {
