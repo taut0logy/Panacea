@@ -16,6 +16,12 @@ import java.util.Objects;
 
 public class UserUtility {
 
+
+
+
+
+
+
     private static final String TAG = "UserUtility";
 
     private static UserUtility instance;
@@ -42,6 +48,10 @@ public class UserUtility {
             instance = new UserUtility();
         }
         return instance;
+    }
+
+    public static void setInstance(UserUtility mockUserUtility) {
+        UserUtility.instance = instance;
     }
 
     public void createUser(User user, OnUserCreatedListener listener) {
@@ -142,6 +152,8 @@ public class UserUtility {
             }
         });
     }
+
+
 
     public interface OnProfilePicDownloadedListener {
         void onSuccess(Bitmap imageBitmap);

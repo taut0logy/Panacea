@@ -1,10 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    android:padding="16dp"
+    android:background="#48bf53">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        android:paddingTop="0dp"
+        android:background="#48bf53">
+
+        <ImageView
+            android:id="@+id/profileAvatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/circle_shape"
+            android:contentDescription="@string/profile_avatar"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:minHeight="80dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: "
+            android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/profileTvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+        android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp"
+    android:background="@drawable/edit_text_background"
+    android:padding="20dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:minHeight="80dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: "
+        android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/profileTvEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="18sp"
+    android:layout_gravity="center_vertical"/>
+</LinearLayout>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginBottom="24dp"
+    android:background="@drawable/edit_text_background"
+    android:padding="20dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:minHeight="80dp">
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Phone: "
+android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_gravity="center_vertical"/>
+
+<TextView
+android:id="@+id/profileTvPhone"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:textSize="18sp"
+    android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginBottom="24dp"
+    android:background="@drawable/edit_text_background"
+    android:padding="20dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:minHeight="80dp">
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Date of Birth: "
+android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_gravity="center_vertical"/>
+
+<TextView
+android:id="@+id/profileTvDob"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:textSize="18sp"
+    android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginBottom="24dp"
+    android:background="@drawable/edit_text_background"
+    android:padding="20dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:minHeight="80dp">
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Gender: "
+android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_gravity="center_vertical"/>
+
+<TextView
+android:id="@+id/profileTvGender"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:textSize="18sp"
+    android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+
