@@ -63,10 +63,6 @@ public class BMIActivity extends AppCompatActivity implements BMIandBMRObserver 
                 return;
             }
 
-
-
-
-
             bmiCalculator.calculateBMIAndBMR(age, weight, heightFeet, heightInches);
         }
     }
