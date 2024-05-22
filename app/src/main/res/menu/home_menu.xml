@@ -2,9 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
-
     <item
         android:id="@+id/view_profile"
         android:title="View Profile"
@@ -23,6 +20,12 @@
     <item
         android:id="@+id/faq"
         android:title="FAQ"
+        android:orderInCategory="100"
+        />
+
+    <item
+        android:id="@+id/learn_about_health"
+        android:title="Contact Us"
         android:orderInCategory="100"
         />
 

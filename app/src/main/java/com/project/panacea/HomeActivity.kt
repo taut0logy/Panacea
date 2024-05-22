@@ -52,6 +52,12 @@ class HomeActivity : AppCompatActivity() {
                 true
             }
 
+            R.id.learn_about_health -> {
+                val intent = Intent(this, ContactActivity::class.java)
+                startActivity(intent)
+                true
+            }
+
             R.id.logout -> {
                 signOutUser()
                 val intent = Intent(this, LoginActivity::class.java)

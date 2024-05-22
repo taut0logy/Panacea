@@ -43,4 +43,9 @@
     <color name="darkpink">#FFFF1493</color>
     <color name="lightbrown">#FFBC8F8F</color>
     <color name="darkbrown">#FFA52A2A</color>
+
+
+        <color name="custom_blue">#1976D2</color>
+        <!-- Add more custom colors here -->
+
 </resources>
