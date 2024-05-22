@@ -292,7 +292,7 @@ public class RegisterActivity extends AppCompatActivity {
         return avatarImageView.getDrawable() != null;
     }
 
-    private boolean validateInput() {
+    boolean validateInput() {
         String name = etName.getText().toString();
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
@@ -338,6 +338,15 @@ public class RegisterActivity extends AppCompatActivity {
         }
         if (dateOfBirth.isEmpty()) {
             etDateOfBirth.setError("Date of birth is required.");
+            return false;
+        }
+        Date date = null;
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            dateFormat.setLenient(true);
+            date = dateFormat.parse(dateOfBirth);
+        } catch (ParseException e) {
+            etDateOfBirth.setError("Invalid date of birth.");
             return false;
         }
 //        if (!validateDateOfBirth(dateOfBirth)) {

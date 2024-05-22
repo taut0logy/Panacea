@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         authUtility.signIn(email, password, new AuthUtility.OnUserAuthenticatedListener() {
             @Override
             public void onSuccess(String uid) {
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                 finish();
             }
 

@@ -10,7 +10,7 @@ public class ToastMatcher extends TypeSafeMatcher<Root> {
 
     @Override
     public void describeTo(Description description) {
-        description.appendText("is toast");
+        description.appendText("Invalid input values");
     }
 
     @Override

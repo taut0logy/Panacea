@@ -3,6 +3,7 @@ package com.project.panacea
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.remote.EspressoRemoteMessage
 import androidx.test.ext.junit.rules.ActivityScenarioRule
@@ -25,10 +26,16 @@ public class HomeActivityTest {
     }
 
 
+
+
+
     @Test
     fun testLaunchHealthTips() {
         Espresso.onView(ViewMatchers.withId(R.id.healthtip)).perform(ViewActions.click())
         assertNotNull(ActivityScenario.launch(HealthTipsActivity::class.java))
     }
+
+
+
 
 }
