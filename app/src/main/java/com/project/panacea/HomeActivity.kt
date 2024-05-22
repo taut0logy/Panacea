@@ -21,6 +21,7 @@ class HomeActivity : AppCompatActivity() {
 
         val recordsCardView = findViewById<CardView>(R.id.records)
         val healthTipsCardView = findViewById<CardView>(R.id.healthtip)
+        val BMIBMRtCardView = findViewById<CardView>(R.id.bmi)
 
         recordsCardView.setOnClickListener {
             val intent = Intent(this, RecordActivity::class.java)
@@ -29,6 +30,11 @@ class HomeActivity : AppCompatActivity() {
 
         healthTipsCardView.setOnClickListener {
             val intent = Intent(this, HealthTipsActivity::class.java)
+            startActivity(intent)
+        }
+
+        BMIBMRtCardView.setOnClickListener {
+            val intent = Intent(this, BMIActivity::class.java)
             startActivity(intent)
         }
     }

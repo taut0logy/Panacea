@@ -71,6 +71,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/bmi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -93,7 +94,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Medicine"
+                        android:text="Calculate BMI and BMR"
                         android:lines="2"
                         android:textStyle="bold"
                         android:textSize="20sp"
