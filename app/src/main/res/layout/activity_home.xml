@@ -199,12 +199,13 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/doctor_male"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Contact and Location"
+                        android:text="Hospitals"
                         android:lines="2"
                         android:textStyle="bold"
                         android:textSize="20sp"
