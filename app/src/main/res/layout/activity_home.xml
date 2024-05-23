@@ -38,6 +38,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/consult"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -56,6 +57,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
+                        android:src="@drawable/doctor_female"
                         android:scaleType="centerCrop" />
                     <TextView
                         android:layout_width="match_parent"
@@ -90,11 +92,12 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
+                        android:src="@drawable/bmiandbmr"
                         android:scaleType="centerCrop" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Calculate BMI and BMR"
+                        android:text="BMI and BMR"
                         android:lines="2"
                         android:textStyle="bold"
                         android:textSize="20sp"
@@ -124,6 +127,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
+                        android:src="@drawable/healthtips"
                         android:scaleType="centerCrop" />
                     <TextView
                         android:layout_width="match_parent"
@@ -158,6 +162,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
+                        android:src="@drawable/heart_background"
                         android:scaleType="centerCrop" />
                     <TextView
                         android:layout_width="match_parent"
