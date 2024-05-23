@@ -169,7 +169,51 @@
                         android:gravity="center"
                         android:layout_marginTop="10dp" />
                 </LinearLayout>
+
+
+
+
+
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="#fff"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:backgroundTint="@color/black">
+
+                    <!-- Add your content here, such as ImageView, TextView, etc. -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contact and Location"
+                        android:lines="2"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
         </GridLayout>
     </ScrollView>
 </RelativeLayout>
