@@ -3,25 +3,21 @@
 
     <item
         android:id="@+id/child"
-        android:icon="@drawable/icon"
         android:title="Children"
         />
 
     <item
         android:id="@+id/elderly"
-        android:icon="@drawable/icon"
         android:title="Elderly"
         />
 
     <item
         android:id="@+id/hypertension"
-        android:icon="@drawable/icon"
         android:title="Hypertension"
         />
 
     <item
         android:id="@+id/diabetic"
-        android:icon="@drawable/icon"
         android:title="Diabetic"
         />
 

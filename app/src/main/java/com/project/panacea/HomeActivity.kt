@@ -51,11 +51,13 @@ class HomeActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+
             R.id.edit_profile -> {
                 val intent = Intent(this, EditProfileActivity::class.java)
                 startActivity(intent)
                 true
             }
+
             R.id.logout -> {
                 signOutUser()
                 val intent = Intent(this, LoginActivity::class.java)
@@ -63,19 +65,27 @@ class HomeActivity : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
-        }
+            }
+
+
+
+
+
+        return super.onOptionsItemSelected(item)
     }
 
     private fun signOutUser() {
         AuthUtility.getInstance().signOut(object : OnUserSignedOutListener {
             override fun onSuccess() {
-                Toast.makeText(this@HomeActivity, "Signed out successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeActivity, "Signed out successfully", Toast.LENGTH_SHORT)
+                    .show()
                 startActivity(Intent(this@HomeActivity, LoginActivity::class.java))
                 finish()
             }
 
             override fun onError(error: String) {
-                Toast.makeText(this@HomeActivity, "Error signing out: $error", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeActivity, "Error signing out: $error", Toast.LENGTH_SHORT)
+                    .show()
             }
         })
     }
