@@ -27,7 +27,6 @@ public class ShowRecords extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_records);
-
         recyclerView = findViewById(R.id.recordsRecyclerView);
         recordList = new ArrayList<>();
         adapter = new RecordsAdapter(recordList);
