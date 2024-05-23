@@ -21,13 +21,14 @@
         android:theme="@style/Theme.Panacea"
         tools:targetApi="31">
         <activity
+            android:name=".DoctorInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
-
         <activity
             android:name=".BMIActivity"
             android:exported="false" />
-
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
@@ -54,6 +55,12 @@
         </provider>
 
         <activity
+            android:name=".DoctorListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorConsultationActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:parentActivityName=".WelcomeActivity" />
@@ -77,9 +84,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Add ContactActivity declaration here -->
+        </activity> <!-- Add ContactActivity declaration here -->
         <activity
             android:name=".ContactActivity"
             android:exported="true" />

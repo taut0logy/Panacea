@@ -22,6 +22,13 @@ class HomeActivity : AppCompatActivity() {
         val recordsCardView = findViewById<CardView>(R.id.records)
         val healthTipsCardView = findViewById<CardView>(R.id.healthtip)
         val BMIBMRtCardView = findViewById<CardView>(R.id.bmi)
+        val doctorCardView = findViewById<CardView>(R.id.doctor)
+
+        doctorCardView.setOnClickListener {
+            val intent = Intent(this, DoctorListActivity::class.java)
+            startActivity(intent)
+        }
+
 
         recordsCardView.setOnClickListener {
             val intent = Intent(this, RecordActivity::class.java)
@@ -66,12 +73,6 @@ class HomeActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
             }
-
-
-
-
-
-        return super.onOptionsItemSelected(item)
     }
 
     private fun signOutUser() {
