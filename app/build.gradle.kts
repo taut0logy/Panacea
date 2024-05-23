@@ -56,10 +56,10 @@ dependencies {
     implementation(libs.firebase.messaging)
     //implementation(libs.firebase.inappmessaging.display)
 
-        androidTestImplementation (libs.androidx.junit.v113)
-        androidTestImplementation (libs.androidx.espresso.core.v340)
-        androidTestImplementation (libs.androidx.espresso.contrib)
-        androidTestImplementation (libs.androidx.espresso.intents.v340)
+    androidTestImplementation (libs.androidx.junit.v113)
+    androidTestImplementation (libs.androidx.espresso.core.v340)
+    androidTestImplementation (libs.androidx.espresso.contrib)
+    androidTestImplementation (libs.androidx.espresso.intents.v340)
     androidTestImplementation (libs.androidx.core.ktx)
 
 

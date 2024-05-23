@@ -77,8 +77,25 @@
 
         <!-- Add ContactActivity declaration here -->
         <activity
+            android:name=".Chattogram"
+            android:exported="true" />
+        <activity
+            android:name=".Dhaka"
+            android:exported="true" />
+        <activity
+            android:name=".Barisal"
+            android:exported="true" />
+        <activity
+            android:name=".InfoActivity"
+            android:exported="true" />
+        <activity
             android:name=".ContactActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".Khulna"
+            android:exported="true" />
+
     </application>
 
 </manifest>

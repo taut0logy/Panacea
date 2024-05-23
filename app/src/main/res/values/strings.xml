@@ -63,4 +63,14 @@
     <string name="email_address">sanzana526@gmail.com</string>
 
     <string name="physical_address">KUET, Khulna</string>
+
+    <string name="address1">Dhaka Address 1</string>
+    <string name="phoneNumber1">01234567890</string>
+    <string name="address2">Dhaka Address 2</string>
+    <string name="phoneNumber2">02345678901</string>
+    <string name="address3">Dhaka Address 3</string>
+    <string name="phoneNumber3">03456789012</string>
+    <string name="address4">Dhaka Address 4</string>
+    <string name="phoneNumber4">04567890123</string>
+
 </resources>

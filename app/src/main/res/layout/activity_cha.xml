@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/addressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+        <include
+            layout="@layout/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!-- Address 1 Box -->
+        <LinearLayout
+            android:id="@+id/address1Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/box_background"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/address5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chattogram Address 1"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/> <!-- Add space between sections -->
+
+            <TextView
+                android:id="@+id/phoneNumber5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1234567890"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <!-- Address 2 Box -->
+        <LinearLayout
+            android:id="@+id/address2Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/box_background"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/address6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chattogram Address 2"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/> <!-- Add space between sections -->
+
+            <TextView
+                android:id="@+id/phoneNumber6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2345678901"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <!-- Address 3 Box -->
+        <LinearLayout
+            android:id="@+id/address3Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/box_background"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/address7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chattogram Address 3"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/> <!-- Add space between sections -->
+
+            <TextView
+                android:id="@+id/phoneNumber7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3456789012"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <!-- Address 4 Box -->
+        <LinearLayout
+            android:id="@+id/address4Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/box_background"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/address8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chattogram Address 4"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/> <!-- Add space between sections -->
+
+            <TextView
+                android:id="@+id/phoneNumber8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4567890123"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,7 +24,7 @@ public class ContactActivityTest {
     @Before
     public void setUp() {
         Intents.init();
-        ActivityScenario.launch(ContactActivity.class);
+        ActivityScenario.launch(Chattogram.class);
     }
 
     @After

@@ -40,6 +40,7 @@ rules = "1.4.0"
 runner = "1.5.2"
 volley = "1.2.1"
 core = "1.5.0"
+playServicesMaps = "18.2.0"
 
 
 [libraries]
@@ -86,6 +87,7 @@ robolectric-robolectric = { module = "org.robolectric:robolectric", version.ref 
 robolectric-v46 = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 volley = { module = "com.android.volley:volley", version.ref = "volley" }
 androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
