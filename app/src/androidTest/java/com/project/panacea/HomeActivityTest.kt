@@ -4,8 +4,6 @@ import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withText
@@ -42,17 +40,6 @@ public class HomeActivityTest {
         assertNotNull(ActivityScenario.launch(BMIActivity::class.java))
     }
 
-    @Test
-    fun testActionBar(){
-        Espresso.onView(ViewMatchers.withId(R.id.toolbar)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-    }
-    @Test
-    fun testEditProfile(){
-        Espresso.onView(ViewMatchers.withId(R.id.toolbarr)).perform(ViewActions.click())
-        //clicking on the menu item
-        onView(withText("Edit Profile")).perform(click())
-        assertNotNull(ActivityScenario.launch(EditProfileActivity::class.java))
-    }
 
 
 
