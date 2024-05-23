@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.project.panacea.AuthUtility.OnUserSignedOutListener
@@ -13,14 +14,21 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_home)
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        var toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-
         val recordsCardView = findViewById<CardView>(R.id.records)
         val healthTipsCardView = findViewById<CardView>(R.id.healthtip)
         val BMIBMRtCardView = findViewById<CardView>(R.id.bmi)
+        val doctorCardView = findViewById<CardView>(R.id.doctor)
+
+        doctorCardView.setOnClickListener {
+            val intent = Intent(this, DoctorListActivity::class.java)
+            startActivity(intent)
+        }
+
 
         recordsCardView.setOnClickListener {
             val intent = Intent(this, RecordActivity::class.java)
@@ -34,13 +42,6 @@ class HomeActivity : AppCompatActivity() {
 
         BMIBMRtCardView.setOnClickListener {
             val intent = Intent(this, BMIActivity::class.java)
-            startActivity(intent)
-        }
-
-
-        val newCardView = findViewById<CardView>(R.id.info)
-        newCardView.setOnClickListener {
-            val intent = Intent(this, InfoActivity::class.java)
             startActivity(intent)
         }
     }
@@ -57,6 +58,7 @@ class HomeActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+
             R.id.edit_profile -> {
                 val intent = Intent(this, EditProfileActivity::class.java)
                 startActivity(intent)
@@ -75,33 +77,28 @@ class HomeActivity : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
-        }
+            }
+
+
+
+
+
+        return super.onOptionsItemSelected(item)
     }
 
     private fun signOutUser() {
         AuthUtility.getInstance().signOut(object : OnUserSignedOutListener {
             override fun onSuccess() {
-                Toast.makeText(this@HomeActivity, "Signed out successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeActivity, "Signed out successfully", Toast.LENGTH_SHORT)
+                    .show()
                 startActivity(Intent(this@HomeActivity, LoginActivity::class.java))
                 finish()
             }
 
             override fun onError(error: String) {
-                Toast.makeText(this@HomeActivity, "Error signing out: $error", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeActivity, "Error signing out: $error", Toast.LENGTH_SHORT)
+                    .show()
             }
         })
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

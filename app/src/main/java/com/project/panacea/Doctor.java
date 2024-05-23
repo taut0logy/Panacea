@@ -1,9 +1,14 @@
 package com.project.panacea;
 
+import android.util.Pair;
+
+import com.google.gson.JsonObject;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor {
+public class Doctor implements Serializable {
     private String name;
     private Gender gender;
     private String phoneNumber;
@@ -29,6 +34,32 @@ public class Doctor {
         this.department = department;
         this.consultationHours = consultationHours;
         this.isAvailable = isAvailable;
+        this.expertise = expertise;
+    }
+
+    public Doctor(JsonObject doctorJson) {
+        this.name = doctorJson.get("name").getAsString();
+        this.department = doctorJson.get("department").getAsString();
+        this.email = doctorJson.get("email").getAsString();
+        this.phoneNumber = doctorJson.get("phone_number").getAsString();
+        String gender = doctorJson.get("gender").getAsString();
+        this.gender = Gender.valueOf(gender);
+        this.isAvailable = doctorJson.get("is_available").getAsBoolean();
+        String workStartDate = doctorJson.get("work_start_date").getAsString();
+        Date date = new Date(workStartDate);
+        this.workStartDate = date;
+        JsonObject consultationHoursJson = doctorJson.get("consultation_hours").getAsJsonObject();
+        ConsultationHours consultationHours = new ConsultationHours();
+        for(String key : consultationHoursJson.keySet()) {
+            Weekday weekday = Weekday.valueOf(key);
+            String value = consultationHoursJson.get(key).getAsString();
+            consultationHours.setHours(weekday, Double.parseDouble(value.split("-")[0]), Double.parseDouble(value.split("-")[1]));
+        }
+        this.consultationHours = consultationHours;
+        ArrayList<String> expertise = new ArrayList<String>();
+        for(int i = 0; i < doctorJson.get("expertise").getAsJsonArray().size(); i++) {
+            expertise.add(doctorJson.get("expertise").getAsJsonArray().get(i).getAsString());
+        }
         this.expertise = expertise;
     }
 

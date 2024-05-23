@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AppInsightsSettings">
-    <option name="selectedTabId" value="Firebase Crashlytics" />
     <option name="tabSettings">
       <map>
         <entry key="Firebase Crashlytics">
           <value>
             <InsightsFilterSettings>
-              <option name="connection">
-                <ConnectionSetting>
-                  <option name="appId" value="com.project.panacea" />
-                  <option name="mobileSdkAppId" value="1:620976571220:android:b0778b9602e25472defec1" />
-                  <option name="projectId" value="panacea-36be4" />
-                  <option name="projectNumber" value="620976571220" />
-                </ConnectionSetting>
-              </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
               <option name="timeIntervalDays" value="THIRTY_DAYS" />
               <option name="visibilityType" value="ALL" />
